@@ -1,6 +1,7 @@
 from datetime import datetime
 
 def greet():
+    date =datetime.now().date
     hour = datetime.now().hour
 
     if hour < 12:
@@ -25,6 +26,10 @@ def command_center():
         if command == "hello":
             print(f"FRIDAY: Hello, Nekkanti Jahnavi!")
 
+        elif command == "date":
+            current_date = datetime.now().strftime("%B %d, %Y")
+            print(f"FRIDAY: Today's date is {current_date}.")
+
         elif command == "time":
             current = datetime.now().strftime("%I:%M %p")
             print(f"FRIDAY: The current time is {current}.")
@@ -32,6 +37,7 @@ def command_center():
         elif command == "help":
             print("FRIDAY: Available commands:")
             print("- hello")
+            print("- date")
             print("- time")
             print("- help")
             print("- exit")
