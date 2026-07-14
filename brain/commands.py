@@ -1,10 +1,5 @@
-from utils.banner import show_banner
-from brain.greeting import greet
-from brain.commands import command_center
-
-show_banner()
-greet()
-command_center()
+def hello():
+    print("FRIDAY: Hello, Nekkanti Jahnavi!")
 
 def greet():
     date =datetime.now().date
@@ -26,20 +21,24 @@ def greet():
     print("Ready to assist.")
     print("=" * 50)
 
+    from datetime import datetime
+
+def show_time():
+    current = datetime.now().strftime("%I:%M %p")
+    print(f"FRIDAY: {current}")
+
 def command_center():
     while True:
         command = input("\nYou: ").lower()
 
         if command == "hello":
-            print(f"FRIDAY: Hello, Nekkanti Jahnavi!")
+            hello()
 
         elif command == "date":
-            current_date = datetime.now().strftime("%B %d, %Y")
-            print(f"FRIDAY: Today's date is {current_date}.")
+            show_date()
 
         elif command == "time":
-            current = datetime.now().strftime("%I:%M %p")
-            print(f"FRIDAY: The current time is {current}.")
+            show_time()
 
         elif command == "help":
             print("FRIDAY: Available commands:")
@@ -55,6 +54,3 @@ def command_center():
 
         else:
             print("FRIDAY: I don't understand that command yet.")
-
-greet()
-command_center()
